@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar</title>
+  <meta name="keywords" content="Calendar">
+  <meta name="description" content="Simple Calendar">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/calendar.png"> <!-- Corrected to 'rel="icon"' -->
+</head>
+<body>
+    <div class="calendar-container">
+        <button id="prev-btn">&lt; Prev</button>
+        <div id="calendar"></div>
+        <button id="next-btn">Next &gt;</button> <!-- Fixed the direction of "Next" button -->
+    </div>
+    
+    <!-- Popup Overlay for backdrop -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+    
+    <!-- Event Popup -->
+    <div id="event-popup" class="event-popup">
+        <div class="popup-header">Add an Event</div>
+        <input type="text" id="event-input" placeholder="Enter event details" aria-label="Event details input">
+        
+        <div class="buttons">
+            <button id="save-event">Save Event</button>
+            <button id="cancel-event" class="cancel">Cancel</button> 
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

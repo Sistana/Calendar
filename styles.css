@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #D98324, #EFDCAB);
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F2F6D0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+}
+
+#calendar {
+    width: 100%;
+    text-align: center;
+}
+
+#calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background: #F2F6D0;
+}
+
+#calendar th, #calendar td {
+    padding: 10px;
+    border: 1px solid #F2F6D0;
+    box-sizing: border-box;
+}
+
+#calendar th {
+    background-color: #F2F6D0;
+}
+
+#calendar td {
+    align-items: center;
+}
+
+#calendar td.empty {
+    background-color: #EFDCAB;
+}
+
+button {
+    background-color: #D98324;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #D57D1D;
+}
+
+button#prev-btn {
+    margin-bottom: 10px;
+}
+
+button#next-btn {
+    margin-top: 10px;
+}
+
+.event-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+.event-popup input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.event-popup input:focus {
+    border-color: #D98324;
+    outline: none;
+}
+
+.event-popup button {
+    background-color: #D98324;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 48%;
+    margin-right: 4%;
+}
+
+.event-popup button:hover {
+    background-color: #D57D1D;
+}
+
+.event-popup button.cancel {
+    background-color: #888;
+}
+
+.event-popup button.cancel:hover {
+    background-color: #666;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#event-popup .popup-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.event-popup .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-popup .buttons button {
+    width: 48%;
+}
+
+.event-popup .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
